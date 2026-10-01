@@ -12,18 +12,14 @@
     <h1>
         Hello,
         {% if name %}
-        {{ name }}! Welcome to PRA3 Docker!
+            {{ name }}! Welcome to PRA3 Docker!
         {% else %}
-        Stranger! Welcome to PRA3 Docker!
+            Stranger! Welcome to PRA3 Docker!
         {% endif %}
     </h1>
 
-    {% if email %}
-    {% if valid_uoft_email %}
-    <h2>{{ email }}</h2>
-    {% else %}
-    <h1>Please use your UofT email.</h1>
-    {% endif %}
+    {% if email and not valid_uoft_email %}
+        <h1>Please use your UofT email.</h1>
     {% endif %}
 
 </div>
